@@ -7,8 +7,15 @@
     "email": "terry.trippany@techtrip.ai",
     "url": "https://github.com/TechTripAi"
   },
-  "homepage": "https://github.com/TechTripAi/TechTrip-AI-plugins/tree/main/plugins/claude-sessions",
-  "repository": "https://github.com/TechTripAi/TechTrip-AI-plugins",
+  "homepage": "https://github.com/TechTripAi/techtrip-claude-plugins/tree/main/plugins/claude-sessions",
+  "repository": "https://github.com/TechTripAi/techtrip-claude-plugins",
   "license": "FSL-1.1-MIT",
-  "keywords": ["claude-code", "sessions", "resume", "transcripts", "summary", "productivity"]
+  "keywords": [
+    "claude-code",
+    "sessions",
+    "resume",
+    "transcripts",
+    "summary",
+    "productivity"
+  ]
 }

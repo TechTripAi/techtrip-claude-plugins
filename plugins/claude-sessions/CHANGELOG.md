@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Moved to the techtrip-claude-plugins repository; still installed as
+  `claude-sessions@TechTrip-AI-plugins`. No functional change.
+
 ## 0.5.0 - 2026-09-28
 
 - **summarize reads like a colleague's account, in four fixed sections.** Every summary
