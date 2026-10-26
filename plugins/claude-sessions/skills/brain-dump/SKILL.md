@@ -335,6 +335,12 @@ output. Names are per repository for `--resume <name>`; ids work everywhere.
   { "cleanupPeriodDays": 90 }
   ```
   The finder warns when a session it shows is near the limit.
+- **Machines and moved folders.** Sessions live under `~/.claude` on the machine that ran
+  them and nowhere else. Copy a project to another Mac and its sessions stay behind; a
+  summary written into the project folder (Section 6) is what travels. Move or rename a
+  folder and `claude --continue` there finds nothing, while `claude --resume <session-id>`
+  still works from anywhere; ask the finder for "sessions in the <name> project" rather
+  than "in this directory" to see them.
 - **Contents.** Transcripts hold everything you pasted into a prompt, including anything
   sensitive. They never leave the machine on their own, but treat `~/.claude/projects`
   like a private notebook. When you ask for a quote, ask for the line you need rather than

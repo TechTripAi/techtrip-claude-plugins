@@ -1,9 +1,15 @@
 # Changelog
 
-## Unreleased
+## 0.5.1 - 2026-10-25
 
+- **Documented what happens when a folder moves or you switch machines.** Sessions stay
+  on the machine that ran them; a moved or renamed folder breaks `claude --continue` but
+  not `claude --resume <id>`, and the finder still reaches those sessions by project name.
+  README section, a brain-dump bullet under Retention and privacy, and the find skill now
+  says so unprompted when a session's directory no longer exists or differs from the
+  current one. No script change.
 - Moved to the techtrip-claude-plugins repository; still installed as
-  `claude-sessions@TechTrip-AI-plugins`. No functional change.
+  `claude-sessions@TechTrip-AI-plugins`.
 
 ## 0.5.0 - 2026-09-28
 

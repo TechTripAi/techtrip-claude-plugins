@@ -127,6 +127,22 @@ summary before you share it; the summarize skill is told to flag anything that s
 through rather than copy it. `--no-redact` on `list`, `show` or `dump` prints the text as
 typed. `--grep` searches the masked text, so search by a variable name, not by a secret.
 
+## When a folder moves or you switch machines
+
+Two things follow from "everything lives under `~/.claude` on this machine":
+
+- **Sessions do not follow a folder to another machine.** Copy or clone a project to a
+  second Mac and the sessions you had on the first stay there; the finder on the second
+  machine knows nothing about them. The portable record is a summary written into the
+  project folder (`/claude-sessions:summarize`, "write it to a file in this folder") before
+  you move on. Any state files your own workflow keeps in the folder travel with it too.
+- **Moving or renaming a folder breaks `--continue`, not `--resume`.** Sessions are keyed
+  on the directory Claude Code was started in, so `claude --continue` in the folder's new
+  location finds nothing. `claude --resume <session-id>` works from anywhere, and the finder
+  still lists the sessions under the old path: ask for them by project name
+  ("sessions in the my-app project"), which matches the path as it was, rather than
+  "in this directory".
+
 ## Requirements
 
 macOS or Linux, Python 3.9 or newer, Claude Code 2.1.223 or newer (for `--resume <id>` from any directory).

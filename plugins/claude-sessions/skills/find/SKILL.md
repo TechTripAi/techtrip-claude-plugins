@@ -105,7 +105,9 @@ everything this can do." Not on later answers in the same session.
    `--here` is the answer to "what have I done in this project": it keys on the directory
    Claude Code was started in, so a repo root also catches sessions started in its
    subdirectories. When the user names a directory that is not the current one, use
-   `--project` instead.
+   `--project` instead. `--project` is also the way in when the folder has since been
+   moved or renamed: `--here` in the new location finds nothing, while
+   `--project <old or new basename>` still matches the path the sessions were recorded under.
 
    The session the user is typing in right now shows up as `[running, working]`; a live
    session waiting for input in another terminal as `[running, idle]`. When the user is
@@ -206,6 +208,12 @@ not on the path. The words match agent view's so the user can move between the t
 
 ## Things worth telling the user unprompted
 
+- When a session's directory no longer exists, or differs from where the user is now, say
+  the folder has moved: `claude --continue` there will not find it, `claude --resume <id>`
+  will, and the resume command you print should be the `--resume` form without a `cd`.
+- Sessions live only on the machine that ran them. If the user says the project is now on
+  another machine, say the session cannot be resumed there and offer the summarize skill,
+  writing the file into the project folder, as the portable record.
 - Sessions older than `cleanupPeriodDays` (default 30) are deleted. If the session they
   want is close to that age, suggest resuming, summarizing or exporting it now and mention
   the setting.
