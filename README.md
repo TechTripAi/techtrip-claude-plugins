@@ -25,7 +25,8 @@ public catalog, [TechTrip-AI-plugins](https://github.com/TechTripAi/TechTrip-AI-
 One repository per domain. A Claude-only domain (this one) may hold several plugins under
 `plugins/`; the catalog points at each with a `git-subdir` entry. A cross-harness domain is one
 plugin at its repository root with many skills, because Copilot CLI reads the same catalog but
-cannot point into a subdirectory. The full layout is in the catalog's README.
+cannot point into a subdirectory. The full specification is the catalog's
+[docs/packaging.md](https://github.com/TechTripAi/TechTrip-AI-plugins/blob/main/docs/packaging.md).
 
 ## Conventions every plugin here follows
 

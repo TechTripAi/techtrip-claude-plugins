@@ -12,7 +12,9 @@ catalog `TechTripAi/TechTrip-AI-plugins`, whose entries point here with `git-sub
 this repo's own `.claude-plugin/marketplace.json` exists only so a checkout loads in place
 during development.
 
-The rule for new work (catalog ADR-003): small and Claude-only goes in `plugins/` here;
+Packaging, naming and release rules for every TechTrip plugin are in the catalog's
+`docs/packaging.md` (https://github.com/TechTripAi/TechTrip-AI-plugins/blob/main/docs/packaging.md);
+follow it and do not restate it here. Its rule for new work: small and Claude-only goes in `plugins/` here;
 anything with an installer, tests, harness templates, or an audience beyond Claude Code gets
 its own repository and a `github` entry in the catalog.
 
