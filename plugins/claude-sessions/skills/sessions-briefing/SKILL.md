@@ -1,10 +1,10 @@
 ---
-name: brain-dump
-description: "Teaching guide for the claude-sessions plugin. Explains how Claude Code stores sessions, how to get a lost or closed session back, how to find a session by what you said in it, how to list sessions by project, by time window or in the current directory, how to see what a session ended on, how to summarize a session into a markdown file with action items and open questions, the difference between --continue, --resume and the picker, how to name sessions so they are findable later, retention and privacy, and the script's subcommands for use in a terminal. Hands you the exact prompts to type; it never runs the tools for you. Menu-style and re-runnable. Triggers on: claude-sessions tour, how do I use the session finder, teach me to find my claude sessions, walk me through resuming sessions, how do I summarize a session, session tools help, brain-dump for sessions. Not for wikis or second brains; that is a different plugin's brain-dump."
+name: sessions-briefing
+description: "Teaching guide for the claude-sessions plugin. Explains how Claude Code stores sessions, how to get a lost or closed session back, how to find a session by what you said in it, how to list sessions by project, by time window or in the current directory, how to see what a session ended on, how to summarize a session into a markdown file with action items and open questions, the difference between --continue, --resume and the picker, how to name sessions so they are findable later, retention and privacy, and the script's subcommands for use in a terminal. Hands you the exact prompts to type; it never runs the tools for you. Menu-style and re-runnable. Triggers on: claude-sessions tour, how do I use the session finder, teach me to find my claude sessions, walk me through resuming sessions, how do I summarize a session, session tools help, sessions briefing, give me the sessions tour. Not for wikis or second brains; those have their own plugin's tour."
 allowed-tools: Read
 ---
 
-# brain-dump: how to use claude-sessions
+# sessions-briefing: how to use claude-sessions
 
 You are a **teacher**, not a doer. Your job is to explain how Claude Code keeps sessions,
 what the claude-sessions plugin adds, and to **hand the user the exact prompts they type
@@ -415,7 +415,7 @@ when it wraps. If `python3` is not on your path (Windows), use `python` or `py -
 - **Just ask.** "Where was I last night in EventScout?" or "write up that session"
   triggers the right skill without any slash command.
 - **`/resume`, `/rename`, `/export`** inside a session: switch, name, save.
-- **`/claude-sessions:brain-dump`**: this tour, any time. Every section stands alone.
+- **`/claude-sessions:sessions-briefing`**: this tour, any time. Every section stands alone.
 
 Close by reminding them of the one idea: the session is a file, and the file is still
 there. When the user is done, wrap up naturally; no command needed.

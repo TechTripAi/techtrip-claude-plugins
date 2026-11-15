@@ -1,6 +1,6 @@
 ---
 name: find
-description: Find, list, search and resume past Claude Code sessions, across every project on this machine or just the current directory, with the directory, session id, status (running, exited, crashed), last active time, the last thing the user said and Claude's last reply, and the exact command to resume. Use this whenever the user has lost, closed, crashed or forgotten a Claude Code session and wants it back ("I closed claude by mistake", "where was I", "which session was I in", "what was I working on last night"), wants to know which session a past conversation happened in ("the session where I asked about X"), wants a list or timeline of their sessions across projects or in this directory ("what sessions have I had in this repo", "list the sessions in here"), wants a session id or resume command, or asks what a previous session ended on. Also use it when the user asks how Claude Code sessions are stored, how to search or clean up ~/.claude/projects, or to check, verify or diagnose whether the session tools can run on this machine ("check the session finder", "is it set up", "run the doctor"). Prefer it over hand-rolled grep over ~/.claude, even for a single lookup. Part of the claude-sessions plugin; the sibling skills are summarize (write one session up as a markdown file) and brain-dump (the guided tour).
+description: Find, list, search and resume past Claude Code sessions, across every project on this machine or just the current directory, with the directory, session id, status (running, exited, crashed), last active time, the last thing the user said and Claude's last reply, and the exact command to resume. Use this whenever the user has lost, closed, crashed or forgotten a Claude Code session and wants it back ("I closed claude by mistake", "where was I", "which session was I in", "what was I working on last night"), wants to know which session a past conversation happened in ("the session where I asked about X"), wants a list or timeline of their sessions across projects or in this directory ("what sessions have I had in this repo", "list the sessions in here"), wants a session id or resume command, or asks what a previous session ended on. Also use it when the user asks how Claude Code sessions are stored, how to search or clean up ~/.claude/projects, or to check, verify or diagnose whether the session tools can run on this machine ("check the session finder", "is it set up", "run the doctor"). Prefer it over hand-rolled grep over ~/.claude, even for a single lookup. Part of the claude-sessions plugin; the sibling skills are summarize (write one session up as a markdown file) and sessions-briefing (the guided tour).
 ---
 
 # claude-sessions: find
@@ -65,11 +65,11 @@ Try asking, in plain words:
   "what did the acctz-app session end on?"
   "summarize that session to a markdown file"
 
-Guided tour with copy-paste prompts:  /claude-sessions:brain-dump
+Guided tour with copy-paste prompts:  /claude-sessions:sessions-briefing
 ```
 
 **Triggered by a question**: skip the banner, answer the question. The first time in a
-session, close with one line: "Tip: /claude-sessions:brain-dump walks through
+session, close with one line: "Tip: /claude-sessions:sessions-briefing walks through
 everything this can do." Not on later answers in the same session.
 
 ## Workflow

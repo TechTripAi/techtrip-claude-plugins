@@ -60,7 +60,8 @@ The plugin's `plugins/<name>/.claude-plugin/plugin.json` is the version of recor
 
 Promised in the README, so a plugin that breaks one needs the README changed too.
 
-- **A brain-dump plus one worker skill per deliverable.** A `brain-dump` skill (teacher:
+- **A tour plus one worker skill per deliverable.** A tour skill with a name of its own,
+  unique across TechTrip plugins (`sessions-briefing` in `claude-sessions`; teacher:
   menu-driven, re-runnable, `allowed-tools: Read`, never runs the workers or touches files on
   the user's behalf) and one or more worker skills whose `description` is a long list of
   plain-language trigger phrases. Add a new worker when the deliverable differs; add a flag
@@ -79,7 +80,7 @@ Promised in the README, so a plugin that breaks one needs the README changed too
 - **One shared script per plugin, addressed relative to the skill directory.** Scripts and
   references live at the plugin root; SKILL.md refers to `<skill-dir>/../../scripts/...`.
   Never hardcode an install path.
-- **brain-dump tone rules:** label every block *Prompt: type into Claude Code* or *Shell: run
+- **Tour tone rules:** label every block *Prompt: type into Claude Code* or *Shell: run
   in your terminal*; use `<placeholders>`, never invented ids or paths; never tell the user to
   type `exit`/`quit`/`stop`.
 

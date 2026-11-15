@@ -11,14 +11,14 @@ public catalog, [TechTrip-AI-plugins](https://github.com/TechTripAi/TechTrip-AI-
 ```
 /plugin marketplace add TechTripAi/TechTrip-AI-plugins
 /plugin install claude-sessions@TechTrip-AI-plugins
-/claude-sessions:brain-dump
+/claude-sessions:sessions-briefing
 ```
 
 ## Plugins in this repository
 
 | Plugin | What it does | Start here |
 |---|---|---|
-| [claude-sessions](plugins/claude-sessions/) | Find, list, resume and summarize past Claude Code sessions across every project on this machine or just the current directory: directory, session id, status, last active, the last thing you said, and the exact resume command; plus a brief or full summary of any session, on screen or as a markdown file. Flags sessions still running elsewhere so you do not fork them by accident. | `/claude-sessions:brain-dump` |
+| [claude-sessions](plugins/claude-sessions/) | Find, list, resume and summarize past Claude Code sessions across every project on this machine or just the current directory: directory, session id, status, last active, the last thing you said, and the exact resume command; plus a brief or full summary of any session, on screen or as a markdown file. Flags sessions still running elsewhere so you do not fork them by accident. | `/claude-sessions:sessions-briefing` |
 
 ## How TechTrip repositories are organized
 
@@ -30,8 +30,9 @@ cannot point into a subdirectory. The full specification is the catalog's
 
 ## Conventions every plugin here follows
 
-- **A `brain-dump` skill.** Menu-driven, re-runnable, teaches rather than does. Skills are
-  namespaced by plugin (`/claude-sessions:brain-dump`), so every plugin can use the same name.
+- **A tour skill with a name of its own.** Menu-driven, re-runnable, teaches rather than
+  does. Each plugin names its tour (`sessions-briefing` in `claude-sessions`); no two
+  TechTrip plugins share a tour name.
 - **A worker skill that also triggers on plain language.** Invoke it by name or just ask; the
   description is written so Claude reaches for it when it fits.
 - **Standard-library scripts.** Bundled scripts run on the Python or shell that ships with

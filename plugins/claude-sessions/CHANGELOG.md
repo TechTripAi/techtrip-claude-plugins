@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6.0 - 2026-11-15
+
+- **The tour is now `sessions-briefing`; it was `brain-dump`.** Type
+  `/claude-sessions:sessions-briefing`, or ask for "the sessions tour" in plain words.
+  `/claude-sessions:brain-dump` no longer exists. Each TechTrip plugin now names its own
+  tour, so two plugins' tours can sit together in a tool that keeps every skill in one
+  folder. The tour's content is unchanged; no script change.
+
 ## 0.5.1 - 2026-10-25
 
 - **Documented what happens when a folder moves or you switch machines.** Sessions stay

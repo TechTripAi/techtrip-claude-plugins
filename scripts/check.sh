@@ -27,8 +27,18 @@ for p in plugins/*/; do
     [ -f "$p/README.md" ] && ok "$name: README" || fail "$name: no README.md"
     [ -f "$p/CHANGELOG.md" ] && ok "$name: CHANGELOG" || fail "$name: no CHANGELOG.md"
     grep -q "^## \[\?$m_ver" "$p/CHANGELOG.md" 2>/dev/null && ok "$name: CHANGELOG has $m_ver" || warn "$name: CHANGELOG has no heading for $m_ver"
-    # skills: frontmatter name equals directory; brain-dump present
-    [ -d "$p/skills/brain-dump" ] && ok "$name: brain-dump skill" || fail "$name: no brain-dump skill"
+    # skills: frontmatter name equals directory; exactly one tour skill, not named brain-dump
+    # (each TechTrip plugin names its own tour; the catalog's docs/packaging.md)
+    [ -d "$p/skills/brain-dump" ] && fail "$name: a skill is named brain-dump; the tour takes a name of its own" || ok "$name: no skill named brain-dump"
+    tours=0
+    for s in "$p"skills/*/; do
+        d="$(awk 'NR>1 && /^---/{exit} /^description:/{print}' "$s/SKILL.md" 2>/dev/null)"
+        case "$d" in *"Teaching guide"*) ;; *) continue ;; esac
+        tours=$((tours + 1)); tname="$(basename "$s")"
+        case "$d" in *tour*) ok "$name/$tname: tour description carries \"tour\"" ;; *) fail "$name/$tname: tour description lacks \"tour\"" ;; esac
+        case "$d" in *"how do I use"*) ok "$name/$tname: tour description carries \"how do I use\"" ;; *) fail "$name/$tname: tour description lacks \"how do I use\"" ;; esac
+    done
+    [ "$tours" -eq 1 ] && ok "$name: one tour skill" || fail "$name: $tours tour skills (a description starting \"Teaching guide\"); expected 1"
     for s in "$p"skills/*/; do
         sname="$(basename "$s")"; md="$s/SKILL.md"
         [ -f "$md" ] || { fail "$name/$sname: no SKILL.md"; continue; }

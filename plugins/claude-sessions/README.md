@@ -44,7 +44,7 @@ Two things to do once, in a new Claude Code session after installing.
 you the exact prompts to type. It never runs anything for you, so it is safe to explore.
 
 ```
-/claude-sessions:brain-dump
+/claude-sessions:sessions-briefing
 ```
 
 **2. Check the machine.** The doctor confirms Python, Claude Code, the session store and
@@ -68,7 +68,7 @@ use `py -3` instead of `python3`.
 
 | You want | Do |
 |---|---|
-| The tour | `/claude-sessions:brain-dump` |
+| The tour | `/claude-sessions:sessions-briefing` |
 | The banner plus your 10 most recent sessions | `/claude-sessions:find` |
 | Just ask | "where was I yesterday in the acctz-app repo?" triggers the finder on its own |
 | Sessions in the current directory | "list the sessions I've had in here" |
@@ -93,7 +93,7 @@ use `py -3` instead of `python3`.
   leaves them open, warns first when a session spans several days and mixes topics, and
   only writes where you say. Shows the session's recorded cost and an estimated split per
   thread.
-- `brain-dump`: the teacher. A menu-driven tour that hands you the exact prompts to type. It
+- `sessions-briefing`: the teacher. A menu-driven tour that hands you the exact prompts to type. It
   never runs anything for you.
 
 All three share one script, `scripts/sessions.py` (Python 3.9+, standard library only),
